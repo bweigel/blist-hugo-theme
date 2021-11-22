@@ -52,6 +52,21 @@
         {{- $linksOutput := delimit $cleanLinks (i18n "translationsSeparator") -}}
         &nbsp;&bull;&nbsp;{{ i18n "translationsLabel" }}{{ $linksOutput }}
       {{- end }}
+      {{ if .Params.coverArtCredit -}}
+      &nbsp;&bull; Cover Art by
+        {{ if .Params.coverArtCredit.link -}}
+          <a
+          href="{{ .Params.coverArtCredit.link }}"
+          target="_blank"
+          rel="noopener"
+          class="p-2 inline-block text-gray-500 hover:text-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+          >
+        {{- end}}
+          {{ .Params.coverArtCredit.creator }}
+        {{ if .Params.coverArtCredit.link -}}
+          </a>
+        {{- end}}
+      {{- end}}
     </h5>
 
     {{ .Content | emojify }}
