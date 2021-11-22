@@ -15,6 +15,11 @@ body {
     margin: 25px 0;
   }
 }
+
+/* Hover effects*/
+.w3-hover-grayscale:hover{filter:grayscale(100%)}
+.w3-hover-opacity:hover{opacity:0.60}
+
 /* inter-300 - latin */
 @font-face {
   font-family: "Inter";
