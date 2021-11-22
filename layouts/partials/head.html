@@ -5,7 +5,7 @@
   <link rel="icon" href="{{ if (isset .Site.Params "favicon") }}{{ .Site.Params.favicon }}{{ else }}/favicon.ico{{ end }}">
 
   <title>
-    {{ block "title" . }} {{- .Title }} - {{ .Site.Title -}} {{ end }}
+    {{ block "title" . }} {{- .Title | emojify }} - {{ .Site.Title -}} {{ end }}
   </title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}" />
   {{- if .Keywords }}
@@ -14,7 +14,7 @@
   {{- if .Params.Author }}
   <meta name="author" content="{{ .Params.Author}}" />
   {{ end -}}
-  
+
   {{ hugo.Generator }}
 
   {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
@@ -49,6 +49,15 @@
       integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF"
       crossorigin="anonymous"
       onload="renderMathInElement(document.body);"
+    ></script>
+  {{ end }}
+
+  <!-- FontAwesome support -->
+  {{ if .Site.Params.fontawesome }}
+    <script defer
+      src="https://kit.fontawesome.com/2122479170.js"
+      integrity="GAxdhVtoTGSwU023i29IGdRzp5JdNoGgicdDq5PTOQXfTaCn/nIqXBamW6/Yl/MB"
+      crossorigin="anonymous"
     ></script>
   {{ end }}
 
