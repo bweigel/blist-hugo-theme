@@ -8,3 +8,7 @@
 @import "assets/css/paginator";
 /* Tailwind's utility classes - generated based on config file */
 @import "node_modules/tailwindcss/utilities";
+
+/* Zilla Slab Font */
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Zilla+Slab:wght@300&display=swap');
